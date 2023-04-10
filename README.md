@@ -1,12 +1,6 @@
 # Adeventure Landing Page Project
 
-# [DEMO] ('https://mariam-saeed.github.io/Landing-Page/')
-
-## Table of Contents
-
-- [Instructions](#instructions)
-
-## Instructions
+# DEMO [link] (https://mariam-saeed.github.io/Landing-Page/)
 
 ## Features
 
