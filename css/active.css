@@ -1,0 +1,93 @@
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+.main-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-section:nth-of-type(odd) .landing-container::before {
+  content: '';
+  background-color: rgba(1, 208, 126, 0.7);
+  position: absolute;
+  z-index: -5;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+.main-section:nth-of-type(even) .landing-container::before {
+  content: '';
+  background-color: rgba(1, 208, 126, 0.7);
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+.main-section:nth-of-type(odd) .landing-container::after {
+  content: '';
+  background-color: rgba(255, 193, 7, 0.7);
+  position: absolute;
+  right: 0;
+  bottom: 0em;
+  z-index: 5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+.main-section:nth-of-type(even) .landing-container::after {
+  content: '';
+  background-color: rgba(255, 193, 7, 0.7);
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: 5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+/* .active-section {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+} */
+
+.main-section.active-section .landing-container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+.main-section.active-section .landing-container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
